@@ -1,0 +1,490 @@
+
+/*GENERALES*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: .5s; }
+
+html {
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  color: white; }
+
+section {
+  background-color: #070707;
+  width: 100%;
+  height: auto;
+  min-height: 100vh; }
+
+.centrado {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 120px;
+  padding-bottom: 90px; }
+
+#container > * {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  position: relative; }
+
+.header__area {
+  position: fixed;
+  top: 21px;
+  left: 230px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.5em; }
+
+.header__area span {
+    font-size: 0.7em;
+    color: lightgray; }
+
+
+/*HEADER*/
+header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 100; }
+  
+header h1 {
+  color: white;
+  margin-left: 20px;
+  z-index: 50;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600; }
+  
+header h1 a {
+  text-decoration: none;
+  color: white; }
+  
+header h1 a:hover {
+  text-decoration: none;
+  color: white; }
+  
+.header__2 {
+  z-index: 101;
+  background-color: #070707;
+  margin-bottom: 230px; }
+
+.h2__oculto {
+  display: none; }
+
+        
+/*BOTON HAMBURGUESA*/
+.menu__lineas {
+  position: fixed;
+  right: 20px;
+  width: 30px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  cursor: pointer; }
+
+.menu__lineas__linea1, .menu__lineas__linea2, .menu__lineas__linea3 {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.5s; }
+
+.menu__lineas__linea2 {
+  margin: 5px 0; }
+
+.menu__lineas__linea1B {
+  transform: rotate(45deg) translate(4px, 6px); }
+
+.menu__lineas__linea2B {
+  opacity: 0; }
+
+.menu__lineas__linea3B {
+  transform: rotate(-45deg) translate(6px, -7px); }
+
+
+  /*MENU ITEMS*/
+.menu__items {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  position: fixed;
+  background-color: #070707;
+  z-index: 99; }
+
+.menu__items ul {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 190;
+  padding: 0;
+  padding-bottom: 50px; }
+    
+.menu__items ul li {
+  width: 100%;
+  height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  list-style: none; }
+      
+.menu__items ul li:nth-child(1) {
+  padding-top: 50px; }
+      
+.menu__items ul li a {
+  text-decoration: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  z-index: 201; }
+
+.visible {
+  right: 0; }
+
+.hover::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width .3s; }
+
+.hover:hover::after {
+  width: 100%;
+  transition: width .3s; }
+
+
+/*HOME*/
+.carousel-item, .fondo__uno, .fondo__dos, .fondo__tres {
+  height: 100vh;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.fondo__uno {
+  background-image: url("../img/01.jpg"); }
+
+.fondo__dos {
+  background-image: url("../img/02.jpg"); }
+
+.fondo__tres {
+  background-image: url("../img/03.jpg"); }
+
+
+/*BIOGRAFÍA*/
+.contenido__biografia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+  padding-bottom: 90px;
+  justify-content: center;
+  align-items: center; }
+
+.img__biografia img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  grid-column: 1/2;
+  padding: 20px;
+  border: 2px solid white; }
+
+.acordeon {
+  grid-column: 1/3; }
+
+.acordeon__details {
+  padding: 1em;
+  border: 2px solid white;
+  width: 300px;
+  margin: 20px auto;
+  font-size: 1.5rem; }
+  
+.acordeon__details__summary {
+  outline: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 5px 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1em;
+  font-weight: 600; }
+
+ .acordeon__details__summary::-webkit-details-marker {
+  color: white; }
+
+.acordeon__details__p {
+  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 0.8em;
+  text-align: justify; }
+
+
+  /*FILMOGRAFÍA*/
+.contenido__filmografia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px; }
+
+.article__filmografia {
+  margin: auto;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  width: 300px;
+  max-height: 602px;
+  min-height: 602px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+  transition-property: background-color;
+  transition-duration: 1s; }
+
+.article__filmografia:hover {
+  background-color: white;
+  color: black; }
+
+.article__filmografia .article__filmografia__img {
+  width: 100%;
+  margin-bottom: 10px; }
+
+.article__filmografia .article__filmografia__h2 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.5em;
+  font-weight: 600; }
+
+.article__filmografia .article__filmografia__h3 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1em; }
+
+.article__filmografia .article__filmografia__h4 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1em;
+  margin-top: 10px; }
+
+.article__filmografia .article__filmografia__p {
+  text-align: justify;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+
+
+
+/*CORTOS*/  
+.contenido__cortos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px; }
+
+.cortos {
+  border: 2px solid white;
+  padding: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  transition-property: background-color;
+  transition-duration: 1s; }
+
+.cortos:hover {
+  background-color: white; }
+
+.cortos__h2 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.3em;
+  margin-top: 25px;
+  color: gray; }
+
+.cortos__iframe {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative; }
+
+.cortos__iframe__iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+
+/*DISCOGRAFÍA*/
+.contenido__discografia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+  justify-content: center;
+  align-items: center; }
+
+.musica {
+  margin: auto;
+  width: 300px;
+  border: 2px solid white;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  position: relative;
+  transition-property: background-color;
+  transition-duration: 1s; }
+
+.musica:hover {
+    background-color: white; }
+
+.musica__h2 {
+  position: absolute;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.3em;
+  color: gray;
+  left: 12px;
+  bottom: 7px; }
+
+.musica__iframe {
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.musica__iframe__iframe {
+  width: 280px; }
+  
+
+/*CONTACTO*/    
+.contenido__contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+form {
+  width: 450px;
+  margin: auto;
+  border: 2px solid white;
+  padding: 20px 20px; }
+  
+input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 7px;
+  font-size: 1.3em;
+  border: none; }
+
+textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 7px;
+  font-size: 1.3em;
+  border: none;
+  min-height: 200px;
+  max-height: 250px;
+  max-width: 100%; }
+
+.boton__formulario {
+  background: transparent;
+  border: 2px solid white;
+  color: white; }
+
+.boton__formulario:hover {
+  background-color: white;
+  border: 2px solid white;
+  color: #070707;
+  cursor: pointer; }
+
+
+  /*FOOTER*/
+.footer {
+  width: 100%;
+  height: 70px;
+  background-color: #070707;
+  display: flex;
+  justify-content: center; }
+
+.footer__parrafo {
+  font-size: 1em;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  line-height: 70px; }
+
+
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 1200px) {
+  .header__area {
+    left: 230px; }
+  
+  .img__biografia {
+    grid-column: 1/3;
+    padding: 20px;
+    margin: auto;
+    flex-grow: 1; }
+
+  .acordeon {
+    grid-column: 1/3; } 
+
+  }
+
+@media screen and (min-width: 768px) {
+  .contenido__biografia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-gap: 40px; } 
+
+  .img__biografia img {
+    max-width: 600px; } 
+
+  .acordeon {
+    grid-column: 2/3; }
+
+  .acordeon__details {
+    width: 600px; }
+      
+  .contenido__cortos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 40px; }
+    
+  .contenido__discografia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 40px; }
+
+  .musica {
+    width: 350px; }
+      
+  .musica__h2 {
+    left: 25px;
+    bottom: 10px; }
+    
+  .musica__iframe {
+    width: 350px; }
+
+  .musica__iframe__iframe {
+    width: 300px; } 
+    
+  }
+
+ @media screen and (max-width: 600px) {
+
+  .header__area {
+    left: 175px; }
+      
+  header h1 {
+    font-size: 1.8em; } 
+
+  form {
+    width: 100%;
+    margin: 0 10px; }
+      
+  }
+
